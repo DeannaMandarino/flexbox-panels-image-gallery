@@ -53,7 +53,8 @@ body {
 .panel1 { background-image: url('images/doubt.jpg'); background-position: 50% 35%; }
 .panel2 { background-image: url('images/pride.jpg'); background-position: 50% 50%; }
 .panel3 { background-image: url('images/fear.jpg'); background-position: 50% 54%; }
-.panel4 { background-image: url('images/thinking.jpg'); }
+.panel4 { background-image: url('images/thinking.jpg'); 
+  background-position: 50% 50%; }
 .panel5 { background-image: url('images/dream.jpg'); background-position: 50% 50%; }
 
 .panel.open {
