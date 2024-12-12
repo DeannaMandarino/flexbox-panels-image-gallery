@@ -50,11 +50,11 @@ body {
 
 @media (min-width: 960px) {
   .panel {
-    flex: 350px;
+    flex: 480px;
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1100px) {
   .panel {
     flex: 1;
   }
