@@ -1,0 +1,49 @@
+/* Root variables for easier color and style customization */
+:root {
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /* Ensures border and padding do not affect element width/height */
+}
+
+/* 1rem = 16px */
+body {
+  color: rgb(255, 255, 255);
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+}
+
+.panels {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+
+.panel {
+  flex: 100%;
+  height: 100vh;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-size: cover;
+  background-position: center;
+}
+
+.panel1 { background-image: url('images/doubt.avif'); }
+.panel2 { background-image: url('images/pride.avif'); }
+.panel3 { background-image: url('images/fear.avif'); }
+.panel4 { background-image: url('images/thinking.avif'); }
+.panel5 { background-image: url('images/dream.avif'); }
+
+@media (min-width: 640px) {
+  .panel {
+    flex: 1;
+  }
+}
