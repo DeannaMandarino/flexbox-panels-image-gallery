@@ -36,11 +36,11 @@ body {
   background-position: center;
 }
 
-.panel1 { background-image: url('images/doubt.avif'); }
-.panel2 { background-image: url('images/pride.avif'); }
-.panel3 { background-image: url('images/fear.avif'); }
-.panel4 { background-image: url('images/thinking.avif'); }
-.panel5 { background-image: url('images/dream.avif'); }
+.panel1 { background-image: url('images/doubt.jpg'); }
+.panel2 { background-image: url('images/pride.jpg'); }
+.panel3 { background-image: url('images/fear.jpg'); }
+.panel4 { background-image: url('images/thinking.jpg'); }
+.panel5 { background-image: url('images/dream.jpg'); }
 
 @media (min-width: 768px) {
   .panel {
