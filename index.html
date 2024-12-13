@@ -4,7 +4,7 @@
   <!-- Meta tags for accessibility and SEO -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="A visually engaging Flexbox-based gallery showcasing motivational quotes to inspire personal growth and confidence.">
   <meta name="author" content="Deanna Mandarino">
 
   <!-- Link to external CSS stylesheet -->
@@ -21,40 +21,43 @@
   <title>Flexbox Panels Image Gallery</title>
 </head>
 <body>
-  <main>
+  <main class="main">
+    <!-- Container for Flexbox panels -->
     <section class="panels">
-      <div class="panel panel1">
-        <p>Stop</p>
-        <p class="special">Doubting</p>
-        <p>Yourself</p>
+      <!-- Individual panel blocks with motivational quotes -->
+      <div class="panel panel--1">
+        <p class="panel__text">Stop</p>
+        <p class="panel__text panel__text--highlight">Doubting</p>
+        <p class="panel__text">Yourself</p>
       </div>
   
-      <div class="panel panel2">
-        <p>Make</p>
-        <p class="special">Yourself</p>
-        <p>Proud</p>
+      <div class="panel panel--2">
+        <p class="panel__text">Make</p>
+        <p class="panel__text panel__text--highlight">Yourself</p>
+        <p class="panel__text">Proud</p>
       </div>
   
-      <div class="panel panel3">
-        <p>Fear</p>
-        <p class="special">Kills</p>
-        <p>Growth</p>
+      <div class="panel panel--3">
+        <p class="panel__text">Fear</p>
+        <p class="panel__text panel__text--highlight">Kills</p>
+        <p class="panel__text">Growth</p>
       </div>
   
-      <div class="panel panel4">
-        <p>Change</p>
-        <p class="special">Your</p>
-        <p>Thinking</p>
+      <div class="panel panel--4">
+        <p class="panel__text">Change</p>
+        <p class="panel__text panel__text--highlight">Your</p>
+        <p class="panel__text">Thinking</p>
       </div>
   
-      <div class="panel panel5">
-        <p>Always</p>
-        <p class="special">Dream</p>
-        <p>Big</p>
+      <div class="panel panel--5">
+        <p class="panel__text">Always</p>
+        <p class="panel__text panel__text--highlight">Dream</p>
+        <p class="panel__text">Big</p>
       </div>
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <!-- External JavaScript file linked with defer to improve page load -->
+  <script src="script.js" defer></script>
 </body>
 </html>
