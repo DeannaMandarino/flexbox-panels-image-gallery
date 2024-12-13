@@ -1,9 +1,12 @@
 /* Root variables for easier color and style customization */
 :root {
-
+  --text-color: rgb(255, 255, 255);
+  --highlight-color: rgba(0, 0, 0, 0.47);
 }
 
-* {
+*,
+*::before,
+*::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box; /* Ensures border and padding do not affect element width/height */
@@ -11,60 +14,69 @@
 
 /* 1rem = 16px */
 body {
-  color: rgb(255, 255, 255);
+  color: var(--text-color);
   font-family: 'Oswald', sans-serif;
-  font-size: 1.4rem; /* 20px */
+  font-size: 1.5rem; /* fallback size */
+  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 3rem); /* 1.5rem = 24px, 3rem = 48px*/
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
 }
 
+/* Container for Flexbox panels */
 .panels {
   display: flex;
   flex-wrap: wrap;
   height: 100vh;
 }
 
+/* Individual panels */
 .panel {
   flex: 100%;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   background-size: cover;
   transition: 
     font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
     flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
     background-image 0.2s;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   overflow: hidden;
 }
 
-/* Flex items */
+/* Text transitions within each panel */
 .panel > * {
-  transition: transform 0.2s;
+  transition: transform 0.2s ease-in-out;
 }
 
+/* Initially move the first and last child elements off-screen. When the panel is active, bring them back into view */
 .panel > *:first-child { transform: translateY(-1300%); }
 .panel.open-active > *:first-child { transform: translateY(0); }
 .panel > *:last-child { transform: translateY(1300%); }
 .panel.open-active > *:last-child { transform: translateY(0); }
 
-.panel1 { background-image: url('images/doubt.jpg'); background-position: 50% 35%; }
-.panel2 { background-image: url('images/pride.jpg'); background-position: 50% 50%; }
-.panel3 { background-image: url('images/fear.jpg'); background-position: 50% 54%; }
-.panel4 { background-image: url('images/thinking.jpg'); 
-  background-position: 50% 50%; }
-.panel5 { background-image: url('images/dream.jpg'); background-position: 50% 50%; }
+/* Background images and positions for each panel */
+.panel--1 { background-image: url('images/doubt.jpg'); background-position: 50% 35%; }
+.panel--2 { background-image: url('images/pride.jpg'); background-position: 50% 50%; }
+.panel--3 { background-image: url('images/fear.jpg'); background-position: 50% 54%; }
+.panel--4 { background-image: url('images/thinking.jpg'); background-position: 50% 50%; }
+.panel--5 { background-image: url('images/dream.jpg'); background-position: 50% 50%; }
 
+/* Text highlighting */
+.panel__text--highlight {
+  background-color: var(--highlight-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+/* Adjust font size for the panel when it's open */
 .panel.open {
-  font-size: 40px;
+  font-size: 3rem; /* fallback size */
+  font-size: clamp(3rem, 2.7rem + 1.5vw, 4.5rem); /* 3rem = 48px, 4.5rem = 72px */
 }
 
-.special {
-  background-color: rgba(0, 0, 0, 0.47);
-}
-
+/* Media queries */
 @media (min-width: 1100px) {
   .panel {
     flex: 1;
@@ -72,7 +84,6 @@ body {
   }
 
   .panel.open {
-    flex: 5;
-    font-size: 40px;
+    flex: 4;
   }
 }
